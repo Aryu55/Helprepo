@@ -1,0 +1,73 @@
+//Disclaimer:This Private Library is for My own styling Puposes I use these mixins for Shortening my css code 
+
+/*Every mixin
+1)breakpoint            :For Responsivity
+2)position              :For Positioning
+3)measurement           :For Height,Width 
+4)flex                  :For Centering
+5)font                  :For Fonts
+*/
+
+//@import "global.scss";
+//@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Roboto:ital@1&display=swap');
+
+
+//For making everything responsive 
+@mixin breakpoint($point) {
+    @if $point == mobile{
+        @media screen and (min-width:576px){
+         @content;   
+        }
+    }   
+    @else if $point == tablet
+    {
+        @media screen and (min-width:768px){
+         @content;   
+        }
+}
+@else if $point == tablet-pro
+{
+    @media screen and (min-width:992px){
+     @content;   
+    }
+}
+@else if $point == laptop
+    {
+        @media screen and (min-width:1200px){
+         @content;   
+        }
+}
+@else if $point == tv
+{
+    @media screen and (min-width:1400px){
+     @content;   
+    }
+}
+}
+//Positioning
+@mixin position ($pos,$top,$left,){
+    position: $pos;
+    top: $top;
+    left: $left;
+    @content;
+}
+//Height and Width
+@mixin measurement($height,$width) {
+    height: $height;
+    width: $width;
+    @content;
+    
+}
+//Display Flex
+@mixin flex ($display,$align-items,$justify-content){
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    @content;
+}
+//Font
+@mixin font ($font-size,$font-family,$font-wieght,){
+    font-size: $font-size;
+    font-family: $font-family;
+    font-weight: $font-wieght;
+}
